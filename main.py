@@ -32,7 +32,7 @@ def generate_tweet(topic : str,resource : str) -> str:
     llm = ChatOpenAI(api_key=os.getenv('openai_api'))
     prompt = ChatPromptTemplate.from_messages([
         ("system", "You are a regular twitter user who like to tweet about trending topics."),
-        ("user", "generate a tweet about this topic {topic} using these resources {resource}")
+        ("user", "generate a tweet about this topic {topic} using these resources {resource} . the tweet should not pass 3 lines")
     ])
     chain = prompt | llm
     tweet = chain.invoke({"topic": topic, "resource": resource})
@@ -54,4 +54,5 @@ if __name__ == "__main__":
     topic = trends[0]
     resources = get_trends_info(topic)
     tweet = generate_tweet(topic,resources)
-    #post_message(tweet)
+    print(tweet.content)
+    post_message(tweet.content)
