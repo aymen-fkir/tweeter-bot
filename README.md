@@ -16,6 +16,7 @@ This project aims to capture and analyze real-time trending topics using Python,
 - **Limiting Search Results:** Implemented a feature to set a search limit, ensuring a controlled number of results for each trend.
 
 - **Modular Code Design:** Adopted a modular code design, encapsulating functionality into separate functions for better maintainability.
+- **Langchain :** I used langchain to customise my prompt and enginer it in way that satisfies both twitter api rules and the context so it can be as real as possible
 
 ## Project Structure
 
